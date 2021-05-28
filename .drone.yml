@@ -8,3 +8,20 @@ steps:
   commands:
   - echo hello
   - echo world
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: backend
+  image: golang
+  commands:
+  - go build
+  - go test
+
+- name: frontend
+  image: node
+  commands:
+  - npm install
+  - npm run test
