@@ -6,10 +6,10 @@ steps:
 - name: greeting
   image: alpine
   commands:
-  - echo hello
-  - echo world
+  - ls -l
+  - tree -L 3
 
-- name: docker  
+- name: build  
   image: plugins/docker
   settings:
     username:
