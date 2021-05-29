@@ -18,4 +18,5 @@ steps:
       from_secret: DOCKER_PASSWORD
     repo: classicsla/pollwedding:tagname
     context: weddingPageLD
+    dockerfile: weddingPageLD/Dockerfile
     tags: latest
