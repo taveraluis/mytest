@@ -6,8 +6,8 @@ steps:
 - name: greeting
   image: alpine
   commands:
+  - pwd
   - ls -l
-  - tree -L 3
 
 - name: build  
   image: plugins/docker
