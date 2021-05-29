@@ -9,19 +9,19 @@ steps:
   - echo hello
   - echo world
 ---
+
 kind: pipeline
-type: docker
-name: default2
+type: kubernetes
+name: buildtest
 
 steps:
-- name: backend
-  image: golang
-  commands:
-  - go build
-  - go test
-
-- name: frontend
-  image: node
-  commands:
-  - npm install
-  - npm run test
+- name: docker  
+  image: plugins/docker
+  settings:
+    username: kevinbacon
+      from_secret: DOCKER_USERNAME
+    password: pa55word
+      from_secret: DOCKER_PASSWORD
+    repo: classicsla/pollwedding:tagname
+    context: weddingPageLD
+    tags: latest
