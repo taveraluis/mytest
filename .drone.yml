@@ -8,13 +8,7 @@ steps:
   commands:
   - echo hello
   - echo world
----
 
-kind: pipeline
-type: kubernetes
-name: buildtest
-
-steps:
 - name: docker  
   image: plugins/docker
   settings:
